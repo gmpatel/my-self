@@ -42,3 +42,7 @@ git add .
 git commit -m "<message>"
 git push
 git status
+
+## Hosting
+
+https://gmpatel.github.io/my-self/
