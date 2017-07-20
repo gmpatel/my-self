@@ -10,11 +10,11 @@ export class AppComponent {
 
   	home: any = {"firstName": "", "lastName": ""};
   	
-  	constructor(private local: LocalDataService) {}
+  	constructor(private localDataService: LocalDataService) {}
 
   	ngOnInit(): void {
 		console.log('AppComponent: ngOnInit()');
-	  	this.local.rootJson()
+	  	this.localDataService.rootJson()
 	  		.subscribe(resp => {
 	  			console.log('AppComponent: ngOnInit(): this.service.getHomeData: OK', resp);
 		      	this.home = resp.body;
