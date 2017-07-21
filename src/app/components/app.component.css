@@ -1,4 +1,11 @@
-.logo {
-  background:url("/assets/images/this/512x512.png") no-repeat;
-  height: 512px;
+.holder {
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0; 
+  margin: auto; 
+  height: 100px; 
+  width: 500px; 
+  background-color: #00bfff;
 }

@@ -1,14 +1,18 @@
+import { Title } from "@angular/platform-browser"; 
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { LocalDataService } from '../../services/local-data.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers : [Title]
 })
 export class HomeComponent implements OnInit {
 
-	constructor(private localDataService: LocalDataService) {}
+	constructor(private title: Title, private localDataService: LocalDataService) {
+  		this.title.setTitle('GP - Home');
+  	}
 
 	home: any = {"firstName": "", "lastName": ""};
 

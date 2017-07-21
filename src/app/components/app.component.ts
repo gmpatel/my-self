@@ -1,16 +1,20 @@
+import { Title } from "@angular/platform-browser"; 
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { LocalDataService } from '../services/local-data.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers : [Title]
 })
 export class AppComponent {
 
   	app: any = {};
   	
-  	constructor(private localDataService: LocalDataService) {}
+  	constructor(private title: Title, private localDataService: LocalDataService) {
+  		this.title.setTitle('GP');
+  	}
 
   	ngOnInit(): void {
 		console.log('AppComponent: ngOnInit()');
