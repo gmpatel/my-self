@@ -1,3 +1,7 @@
+md-toolbar md-icon {
+  margin-right: 5px;
+}
+
 .holder {
   position: absolute; 
   top: 0; 
@@ -7,5 +11,32 @@
   margin: auto; 
   height: 100px; 
   width: 500px; 
-  background-color: #00bfff;
+}
+
+.example-fab {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+
+.example-container {
+  width: 500px;
+  height: 300px;
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+html, body, material-app, md-sidenav-container, .my-content {
+  margin: 0;
+  width: 100%;
+  height: calc(100% - 64px);
 }

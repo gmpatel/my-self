@@ -1,12 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
-import { LocalDataService } from '../services/local-data.service'
+import { AppRoutingModule } from '../routings/app-routing.module';
+import { MaterialModule } from './material/material.module';
 
-import { AppRoutingModule }     from '../routings/app-routing.module';
+import { LocalDataService } from '../services/local-data.service'
+import { MiscService } from '../services/misc.service'
 
 import { AppComponent } from '../components/app.component';
 import { HomeComponent } from '../components/home/home.component';
@@ -27,9 +30,11 @@ import { GreenComponent } from '../components/green/green.component';
     HttpModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
-  providers: [LocalDataService],
+  providers: [LocalDataService, MiscService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

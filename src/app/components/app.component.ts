@@ -1,19 +1,19 @@
-import { Title } from "@angular/platform-browser"; 
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, Input, OnChanges } from '@angular/core';
 import { LocalDataService } from '../services/local-data.service';
+import { MiscService } from '../services/misc.service'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers : [Title]
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
 
   	app: any = {};
   	
-  	constructor(private title: Title, private localDataService: LocalDataService) {
-  		this.title.setTitle('GP');
+  	constructor(private miscService: MiscService, private localDataService: LocalDataService) {
+  		this.miscService.setTitle('GP');
   	}
 
   	ngOnInit(): void {
