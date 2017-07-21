@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { LocalDataService } from './services/local-data.service';
+import { LocalDataService } from '../services/local-data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,19 +8,19 @@ import { LocalDataService } from './services/local-data.service';
 })
 export class AppComponent {
 
-  	home: any = {"firstName": "", "lastName": ""};
+  	app: any = {};
   	
   	constructor(private localDataService: LocalDataService) {}
 
   	ngOnInit(): void {
 		console.log('AppComponent: ngOnInit()');
-	  	this.localDataService.rootJson()
+	  	this.localDataService.appJson()
 	  		.subscribe(resp => {
-	  			console.log('AppComponent: ngOnInit(): this.service.getHomeData: OK', resp);
-		      	this.home = resp.body;
+	  			console.log('AppComponent: ngOnInit(): this.localDataService.appJson: OK', resp);
+		      	this.app = resp.body;
 		    },
 		    error => {
-				console.error('AppComponent: ngOnInit(): this.service.getHomeData: Error', error);
+				console.error('AppComponent: ngOnInit(): this.localDataService.appJson: Error', error);
 		    });
   	}
 }

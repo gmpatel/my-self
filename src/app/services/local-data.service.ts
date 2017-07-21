@@ -7,11 +7,16 @@ import { Observable } from 'rxjs/Rx'; //import { Observable } from 'rxjs/Observa
 @Injectable()
 export class LocalDataService {
 	
-	private rootJsonUrl = '/assets/data/this/root-data.json';
+	private appJsonUrl = '/assets/data/this/app-data.json';
+	private homeJsonUrl = '/assets/data/this/home-data.json';
   	
   	constructor(private client: HttpClient, private http: Http) { }
 
-	rootJson() {
-     	return this.client.get(this.rootJsonUrl, { observe: 'response' });
+	appJson() {
+     	return this.client.get(this.appJsonUrl, { observe: 'response' });
+ 	}
+
+ 	homeJson() {
+     	return this.client.get(this.homeJsonUrl, { observe: 'response' });
  	}
 }
