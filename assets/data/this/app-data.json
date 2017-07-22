@@ -1,1 +1,39 @@
-{}
+{
+	"header": {
+		"tabs": [
+			{
+				"text": "Home",
+				"icon": "face",
+				"link": "/"
+			},
+			{
+				"text": "Red",
+				"icon": "view_module",
+				"link": "/red"
+			},
+			{
+				"text": "Green",
+				"icon": "visibility",
+				"link": "/green"
+			},
+			{
+				"text": "Blue",
+				"icon": "apps",
+				"link": "/blue"
+			}
+		],
+		"menu": {
+			"icon": "more_vert",
+			"options": [
+				{
+					"icon": "settings",
+					"text": "Settings"
+				},
+				{
+					"icon": "help",
+					"text": "Help"
+				}
+			]
+		}
+	}
+}
