@@ -10,7 +10,8 @@ import { MiscService } from '../../services/misc.service'
 export class RedComponent implements OnInit {
 
 	constructor(private miscService: MiscService, private localDataService: LocalDataService) {
-  		this.miscService.setTitle('GP | Red');
+	  miscService.log('RedComponent: constructor()');
+	  miscService.setTitle('GP | Red');
   	}
 
 	ngOnInit() {

@@ -10,7 +10,8 @@ import { MiscService } from '../../services/misc.service'
 export class GreenComponent implements OnInit {
 
 	constructor(private miscService: MiscService, private localDataService: LocalDataService) {
-  		this.miscService.setTitle('GP | Green');
+  	  miscService.log('GreenComponent: constructor()');
+  	  miscService.setTitle('GP | Green');
   	}
 
 	ngOnInit() {

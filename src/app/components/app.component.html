@@ -2,17 +2,20 @@
 
 <md-toolbar color="primary">
     <!--<span style="margin-right: 50px">Name</span>-->
-    <a md-button routerLink='/'><md-icon>face</md-icon>Home</a>
-    <a md-button routerLink='/red'><md-icon>view_module</md-icon>Red</a>
-    <a md-button routerLink='/green'><md-icon>visibility</md-icon>Green</a>
-    <a md-button routerLink='/blue'><md-icon>apps</md-icon>Blue</a>
+
+    <div *ngIf=app>
+      <a *ngFor='let tab of app.header.tabs' md-button routerLink={{tab.link}}><md-icon>{{tab.icon}}</md-icon>{{tab.text}}</a>
+    </div>
     <span class="fill-remaining-space"></span>
-    <button md-button [mdMenuTriggerFor]='appMenu'><md-icon>more_vert</md-icon></button>
+    <div *ngIf=app>
+      <button md-button [mdMenuTriggerFor]='appMenu'><md-icon>{{app.header.menu.icon}}</md-icon></button>
+    </div>
 </md-toolbar>
 
 <md-menu #appMenu="mdMenu">
-  <button md-menu-item><md-icon>settings</md-icon>Settings</button>
-  <button md-menu-item><md-icon>help</md-icon>Help</button>
+  <div *ngIf=app>
+    <button *ngFor='let option of app.header.menu.options'  md-menu-item><md-icon>{{option.icon}}</md-icon>{{option.text}}</button>
+  </div>
 </md-menu>
 
 <md-sidenav-container class="example-container">

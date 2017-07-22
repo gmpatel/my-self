@@ -10,20 +10,22 @@ import { MiscService } from '../../services/misc.service'
 export class HomeComponent implements OnInit {
 
 	constructor(private miscService: MiscService, private localDataService: LocalDataService) {
-  		this.miscService.setTitle('GP | Home');
+  	  miscService.log('HomeComponent: constructor()');
+	  miscService.setTitle('GP | Home');
   	}
 
 	home: any = {"firstName": "", "lastName": ""};
 
   	ngOnInit(): void {
-	console.log('HomeComponent: ngOnInit()');
-		this.localDataService.homeJson()
-			.subscribe(resp => {
-				console.log('HomeComponent: ngOnInit(): this.localDataService.homeJson: OK', resp);
-	      	this.home = resp.body;
-	    },
-	    error => {
-			console.error('HomeComponent: ngOnInit(): this.localDataService.homeJson: Error', error);
-	    });
+		this.miscService.log('HomeComponent: ngOnInit()');
+	  	this.localDataService.homeJson()
+	    	.subscribe(resp => {
+		  		this.miscService.log('HomeComponent: ngOnInit(): this.localDataService.homeJson: OK', resp);
+	      		this.home = resp.body;
+	      	},
+	      	error => {
+				this.miscService.error('HomeComponent: ngOnInit(): this.localDataService.homeJson: Error', error);
+	      	}
+      );
 	}
 }

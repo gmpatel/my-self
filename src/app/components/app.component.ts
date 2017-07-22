@@ -10,10 +10,11 @@ import { MiscService } from '../services/misc.service'
 })
 export class AppComponent {
 
-  	app: any = {};
+  	app: any;
   	
   	constructor(private miscService: MiscService, private localDataService: LocalDataService) {
-  		this.miscService.setTitle('GP');
+  		miscService.log('HomeComponent: constructor()');
+      miscService.setTitle('GP');
   	}
 
   	ngOnInit(): void {

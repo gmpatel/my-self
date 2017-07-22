@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 import { AppRoutingModule } from '../routings/app-routing.module';
 import { MaterialModule } from './material/material.module';
@@ -34,7 +35,7 @@ import { GreenComponent } from '../components/green/green.component';
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [LocalDataService, MiscService],
+  providers: [LocalDataService, MiscService, Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
